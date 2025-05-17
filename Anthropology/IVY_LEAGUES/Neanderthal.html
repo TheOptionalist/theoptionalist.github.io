@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neanderthal Man - Anthropology</title>
+    <link rel="stylesheet" href="styles.css" /> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Your page content here -->
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load header.html
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    // Load footer.html
+    fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+    <header>
+        <h1>Neanderthal Man</h1>
+        <p>Anthropology Article</p>
+    </header>
+
+    <main>
+        <section id="article">
+            <h2>Introduction to Neanderthals</h2>
+            <p>Neanderthals (Homo neanderthalensis) were a species or subspecies of archaic humans that lived in Europe and parts of Asia.</p>
+            
+            <h3>1. Discovery of Neanderthals</h3>
+            <p>The first fossils attributed to Neanderthals were discovered in 1856 in the Neander Valley of Germany.</p>
+            
+            <h3>2. Physical Characteristics</h3>
+            <ul>
+                <li>Short, stocky build adapted for cold climates</li>
+                <li>Large brow ridge and heavyset face</li>
+                <li>Robust bones and strong muscles</li>
+            </ul>
+
+            <h3>3. Tools and Culture</h3>
+            <p>Neanderthals used tools and exhibited some cultural behaviors such as burial practices and symbolic behavior.</p>
+
+            <h3>4. Extinction and Legacy</h3>
+            <p>Neanderthals went extinct around 40,000 years ago, but modern humans carry traces of Neanderthal DNA.</p>
+        </section>
+
+        <section id="video">
+            <h3>Watch the Neanderthal Documentary</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UTY-H_TiOZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p><strong>Author:</strong> The Optionalist</p>
+        <p><strong>Published on:</strong> <time datetime="2025-05-14">May 14, 2025</time></p>
+        <p><strong>Tags:</strong> Neanderthal, Anthropology, Human Evolution, Prehistory</p>
+        <p><strong>Download PDF:</strong> <a href="Neanderthal.pdf" download>Click here to download the Neanderthal article PDF</a></p>
+    </footer>
+<!-- Navigation Buttons -->
+<div>
+  <a href="../../index.html" class="btn">Back to Home</a>
+  <a href="../index.html" class="btn">Back to Section</a>
+</div>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Your page content here -->
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load header.html
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    // Load footer.html
+    fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</body>
+</html>
