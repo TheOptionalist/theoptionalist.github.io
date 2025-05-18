@@ -6,6 +6,19 @@
   <title>The Optionalist</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+  }
+
+  window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+</script>
 </head>
 <body>
   <div id="header"></div>

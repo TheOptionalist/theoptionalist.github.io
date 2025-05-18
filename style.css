@@ -7,6 +7,25 @@ body {
   line-height: 1.7;
   font-size: 1.05rem;
 }
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #e6e6e6;
+}
+
+body.dark-mode a {
+  color: #ffcc99;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+  background-color: #4b0000;
+  color: #fdf6e3;
+  border-color: #800000;
+}
+
+body.dark-mode .nav-links li a {
+  color: #fdf6e3;
+}
 
 /* Links */
 a {
@@ -21,9 +40,8 @@ a:hover {
 .container {
   max-width: 860px;
   margin: auto;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem; /* <-- added horizontal padding */
 }
-
 /* Header */
 .site-header {
   background-color: #800000;
