@@ -5,25 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs - The Optionalist</title>
   <link rel="stylesheet" href="../style.css" />
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-  }
-
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
+  <style>
+    /* Classic beige and maroon theme */
+    body {
+      font-family: Cambria, "Times New Roman", serif;
+      color: #4b0000;
+      background-color: #f9f4ef;
+      margin: 0;
+      line-height: 1.6;
     }
-  };
-</script>
+
+    a {
+      color: #800000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header, .site-footer {
+      background-color: #f2e8dc;
+      border-color: #800000;
+      padding: 1rem 0;
+      color: #4b0000;
+      text-align: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+    }
+
+    .nav-links li a {
+      font-weight: 600;
+      color: #4b0000;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #1c1c1c;
+      color: #fdf6e3;
+    }
+
+    body.dark-mode a {
+      color: #ffcc99;
+    }
+
+    body.dark-mode .site-header,
+    body.dark-mode .site-footer {
+      background-color: #4b0000;
+      color: #fdf6e3;
+      border-color: #800000;
+    }
+
+    body.dark-mode .nav-links li a {
+      color: #fdf6e3;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
 </head>
 <body class="light-mode">
   <header class="site-header">
     <div class="container">
       <h1><a href="/index.html">The Optionalist</a></h1>
-      <nav class="container">
+      <nav>
         <ul class="nav-links">
           <li><a href="/Anthropology/index.html">Anthropology</a></li>
           <li><a href="/PSIR/index.html">PSIR</a></li>
@@ -31,6 +99,9 @@
           <li><a href="/Stories/index.html">Stories</a></li>
         </ul>
       </nav>
+      <button onclick="toggleTheme()" style="margin-top: 1rem; padding: 0.5rem 1rem; font-family: Cambria, serif;">
+        Toggle Dark/Light Mode
+      </button>
     </div>
   </header>
 

@@ -6,41 +6,40 @@
   <title>The Optionalist</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-  }
-
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
+  
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
     }
-  };
-</script>
+
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
 </head>
-<body>
-  <div id="header"></div>
+<body class="light-mode">
+  <div id="header">Loading header...</div>
 
   <main class="main-content">
     <h1>Welcome to The Optionalist</h1>
     <p class="tagline">Explore UPSC, UGC NET, and Ivy League-level content in Anthropology and PSIR</p>
+    
     <section class="subject-links">
       <a href="Anthropology/index.html" class="subject-card">Anthropology</a>
       <a href="PSIR/index.html" class="subject-card">PSIR</a>
     </section>
   </main>
 
-  <div id="footer"></div>
-  <script>
+  <div id="footer">Loading footer...</div>
+
+  <script defer>
     fetch('header.html')
       .then(response => response.text())
       .then(data => document.getElementById('header').innerHTML = data);
 
     fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
-  </script>
-</body>
-</html>
+      .then

@@ -1,38 +1,9 @@
 <header class="site-header">
-body.dark-mode {
-  background-color: #1c1c1c;
-  color: #e6e6e6;
-}
-
-body.dark-mode a {
-  color: #ffcc99;
-}
-
-body.dark-mode .site-header,
-body.dark-mode .site-footer {
-  background-color: #4b0000;
-  color: #fdf6e3;
-  border-color: #800000;
-}
-
-body.dark-mode .nav-links li a {
-  color: #fdf6e3;
-}
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-  }
-
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-  };
-</script>
   <div class="container">
     <h1><a href="/index.html">The Optionalist</a></h1>
+    <button onclick="toggleTheme()" style="margin-left:auto; background:#fff0; border:1px solid #800000; color:#800000; padding:0.3rem 0.8rem; border-radius:5px; cursor:pointer;">
+      Toggle Theme
+    </button>
     <nav class="container">
       <ul class="nav-links">
         <li><a href="/Anthropology/index.html">Anthropology</a></li>

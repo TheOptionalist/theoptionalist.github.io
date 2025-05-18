@@ -5,53 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anthropology - The Optionalist</title>
   <link rel="stylesheet" href="../style.css" />
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-  }
-
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
     }
-  };
-</script>
+
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
 </head>
 <body class="light-mode">
-  <header class="site-header">
-    <div class="container">
-      <h1><a href="/index.html">The Optionalist</a></h1>
-      <nav class="container">
-<input type="text" id="searchBox" placeholder="Search articles..." onkeyup="filterList()" style="margin-bottom:1rem; padding:0.5rem; width:100%; max-width:400px;">
+  <div id="header">Loading header...</div>
 
-<script>
-  function filterList() {
-    const input = document.getElementById("searchBox").value.toLowerCase();
-    const listItems = document.querySelectorAll("ul li");
-    listItems.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(input) ? "" : "none";
-    });
-  }
-</script>
-        <ul class="nav-links">
-          <li><a href="/Anthropology/index.html">Anthropology</a></li>
-          <li><a href="/PSIR/index.html">PSIR</a></li>
-          <li><a href="/Blogs/index.html">Blogs</a></li>
-          <li><a href="/Stories/index.html">Stories</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container main-content">
-    <h2>Anthropology</h2>
+  <main class="main-content">
+    <h1>Anthropology</h1>
     <p class="tagline">Explore topics across UPSC CSE, UGC NET, and Ivy Leagues</p>
+
+    <input type="text" id="searchBox" placeholder="Search articles..." onkeyup="filterList()" style="margin-bottom:1rem; padding:0.5rem; width:100%; max-width:400px; font-size:1rem; font-family:Cambria, serif;">
 
     <section>
       <ul>
-        <li><a href="UPSC_CSE/Neanderthal.html">UPSC CSE – Neanderthals</a></li>
-        <li><a href="UPSC_CSE/Homo_erectus.html">UPSC CSE – Homo Erectus</a></li>
-        <li><a href="UGC_NET/Neanderthal.html">UGC NET – Neanderth
+        <li><a href="UPSC_CSE/Neanderthal.html">UPSC CSE - Neanderthals</a></li>
+        <li><a href="UPSC_CSE/Homo_erectus.html">UPSC CSE - Homo Erectus</a></li>
+        <li><a href="UGC_NET/Neanderthal.html">UGC NET - Neanderthals</a></li>
+        <li><a href="Ivy_Leagues/Neanderthal.html">Ivy Leagues - Neanderthals</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="footer">Loading footer...</div>
+
+  <script defer>
+    fetch('../header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+
+    function filterList() {
+      const input = document.getElementById("searchBox").value.toLowerCase();
+      const items = document.querySelectorAll("ul li");
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
