@@ -1,21 +1,23 @@
 /* Base styles */
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Cambria", "Times New Roman", "Garamond", "Georgia", serif;
   color: #2c2c2c;
-  background-color: #fdfaf6;
+  background-color: #fdf6e3;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
+/* Links */
 a {
-  color: #004488;
+  color: #4b0000;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* Layout */
+/* Layout Container */
 .container {
   max-width: 860px;
   margin: auto;
@@ -24,103 +26,61 @@ a:hover {
 
 /* Header */
 .site-header {
-  background-color: #f2e8dc;
-  border-bottom: 1px solid #d8cfc4;
+  background-color: #800000;
+  color: #fff;
+  border-bottom: 4px solid #4b0000;
   padding: 1rem 0;
   margin-bottom: 2rem;
 }
-
 .site-header h1 a {
-  font-size: 2rem;
-  color: #222;
+  font-size: 2.2rem;
+  color: #fff;
   text-decoration: none;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
   padding: 0;
   margin-top: 0.5rem;
 }
-
 .nav-links li a {
   font-weight: 500;
-  color: #444;
+  color: #fdf6e3;
 }
 
-/* Main content */
-.main-content h1,
-.main-content h2,
-.main-content h3 {
-  font-family: 'Georgia', serif;
-  color: #222;
-  margin-top: 1.5rem;
-}
-
+/* Main Content */
 .main-content h2 {
   font-size: 1.75rem;
+  margin-top: 1.5rem;
+  color: #4b0000;
 }
-
-.main-content h3 {
-  font-size: 1.4rem;
-}
-
 .main-content p {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
-
-.meta {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-/* Video Embed */
-.video-embed {
-  margin: 2rem 0;
-}
-.video-embed iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
-}
-
-/* PDF Download */
-.pdf-download a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #005f73;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+.tagline {
+  font-style: italic;
+  color: #555;
+  margin-top: -0.5rem;
 }
 
 /* Footer */
 .site-footer {
-  background-color: #f2e8dc;
-  border-top: 1px solid #d8cfc4;
+  background-color: #800000;
+  border-top: 4px solid #4b0000;
   padding: 2rem 1rem;
   margin-top: 3rem;
   text-align: center;
   font-size: 0.95rem;
-  color: #666;
+  color: #fdf6e3;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .video-embed iframe {
-    height: 250px;
-  }
+/* Lists */
+ul {
+  padding-left: 1.2rem;
+}
+ul li {
+  margin-bottom: 0.75rem;
 }
