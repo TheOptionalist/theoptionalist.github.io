@@ -134,3 +134,34 @@ ul li {
 .content-area {
   flex: 3 1 600px;
 }
+@media (max-width: 768px) {
+  .with-sidebar {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    list-style: none;
+    margin: 0.5rem 0;
+  }
+}
+body {
+  border: 4px solid #800000; /* rich maroon */
+  border-radius: 8px;
+  margin: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.main-content {
+  padding: 1rem;
+}
