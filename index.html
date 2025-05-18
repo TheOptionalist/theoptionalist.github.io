@@ -6,46 +6,99 @@
   <title>The Optionalist</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #fdf6e3;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
     }
 
-    window.onload = () => {
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-      }
-    };
-  </script>
+    .sidebar {
+      background-color: #3b0000; /* Darker, royal maroon */
+      width: 220px;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .sidebar h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ffe4c4;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #ffffff;
+      background-color: #5e0000;
+      border-radius: 4px;
+      padding-left: 0.5rem;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .subject-links a {
+      display: block;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #fff0f0;
+      border: 1px solid #ccc;
+      border-left: 4px solid #800000;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .subject-links a:hover {
+      background: #ffeaea;
+    }
+  </style>
 </head>
-<body class="light-mode">
-  <div id="header">Loading header...</div>
+<body>
+  <div class="sidebar">
+    <h2>The Optionalist</h2>
+    <a href="Anthropology/index.html">Anthropology</a>
+    <a href="PSIR/index.html">PSIR</a>
+    <a href="Blogs/index.html">Blogs</a>
+    <a href="Stories/index.html">Stories</a>
+  </div>
 
   <main class="main-content">
     <h1>Welcome to The Optionalist</h1>
     <p class="tagline">Explore UPSC, UGC NET, and Ivy League-level content in Anthropology and PSIR</p>
-    
+
     <section class="subject-links">
-      <a href="Anthropology/index.html" class="subject-card">Anthropology</a>
-      <a href="PSIR/index.html" class="subject-card">PSIR</a>
+      <a href="Anthropology/index.html">Explore Anthropology</a>
+      <a href="PSIR/index.html">Explore PSIR</a>
     </section>
   </main>
-
-  <div id="footer">Loading footer...</div>
-
-  <script defer>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('header').innerHTML = data)
-      .catch(error => console.error('Header load error:', error));
-
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer').innerHTML = data)
-      .catch(error => console.error('Footer load error:', error));
-  </script>
 </body>
 </html>

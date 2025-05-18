@@ -102,3 +102,35 @@ ul {
 ul li {
   margin-bottom: 0.75rem;
 }
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sidebar {
+  flex: 1 1 200px;
+  background-color: #f8f1e5;
+  padding: 1rem;
+  border-right: 2px solid #4b0000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #4b0000;
+  font-weight: bold;
+}
+
+.content-area {
+  flex: 3 1 600px;
+}
