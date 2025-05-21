@@ -1,42 +1,39 @@
-/* Base styles */
+/* Global Reset */
 html {
   box-sizing: border-box;
 }
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
+/* Base Styles */
 body {
   font-family: "Cambria", "Times New Roman", "Garamond", "Georgia", serif;
   color: #2c2c2c;
-  background-color: #fffdf9;
+  background-color: #fdf6e3;
   margin: 12px;
-  border: 4px solid #800000; /* rich maroon */
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 0;
   line-height: 1.7;
   font-size: 1.05rem;
+  border: 4px solid #800000;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Mode */
+@media (max-width: 500px) {
+  body {
+    margin: 6px;
+    border-width: 2px;
+    border-radius: 5px;
+  }
+}
+
 body.dark-mode {
   background-color: #1c1c1c;
   color: #e6e6e6;
 }
-body.dark-mode a {
-  color: #ffcc99;
-}
-body.dark-mode .site-header,
-body.dark-mode .site-footer {
-  background-color: #4b0000;
-  color: #fdf6e3;
-  border-color: #800000;
-}
-body.dark-mode .nav-links li a {
-  color: #fdf6e3;
-}
 
-/* Links */
 a {
   color: #4b0000;
   text-decoration: none;
@@ -44,27 +41,37 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-/* Layout Container */
-.container {
-  max-width: 860px;
-  margin: auto;
-  padding: 1.5rem 1rem;
+body.dark-mode a {
+  color: #ffcc99;
 }
 
-/* Header */
-.site-header {
+/* Header & Footer */
+.site-header,
+.site-footer {
   background-color: #800000;
-  color: #fff;
+  color: #fdf6e3;
+  padding: 1rem;
+  border-color: #4b0000;
+}
+
+.site-header {
   border-bottom: 4px solid #4b0000;
-  padding: 1rem 0;
   margin-bottom: 2rem;
 }
+
+.site-footer {
+  border-top: 4px solid #4b0000;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+}
+
 .site-header h1 a {
   font-size: 2.2rem;
   color: #fff;
   text-decoration: none;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -78,10 +85,13 @@ a:hover {
   color: #fdf6e3;
 }
 
-/* Main Content */
-.main-content {
-  padding: 1rem;
+/* Layout Container */
+.container {
+  max-width: 860px;
+  margin: auto;
+  padding: 1.5rem 1rem;
 }
+
 .main-content h2 {
   font-size: 1.75rem;
   margin-top: 1.5rem;
@@ -96,24 +106,8 @@ a:hover {
   color: #555;
   margin-top: -0.5rem;
 }
-
-/* Footer */
-.site-footer {
-  background-color: #800000;
-  border-top: 4px solid #4b0000;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #fdf6e3;
-}
-
-/* Lists */
-ul {
-  padding-left: 1.2rem;
-}
-ul li {
-  margin-bottom: 0.75rem;
+.main-content {
+  padding: 1rem;
 }
 
 /* Sidebar Layout */
@@ -122,12 +116,14 @@ ul li {
   flex-wrap: wrap;
   gap: 2rem;
 }
+
 .sidebar {
   flex: 1 1 200px;
   background-color: #f8f1e5;
   padding: 1rem;
   border-right: 2px solid #4b0000;
 }
+
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -141,11 +137,12 @@ ul li {
   color: #4b0000;
   font-weight: bold;
 }
+
 .content-area {
   flex: 3 1 600px;
 }
 
-/* Mobile Responsive */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .with-sidebar {
     flex-direction: column;
@@ -153,8 +150,8 @@ ul li {
 
   .sidebar {
     width: 100%;
-    margin-bottom: 1rem;
     padding: 0;
+    margin: 0;
     background-color: #fdfaf6;
     border-bottom: 1px solid #ccc;
     border-right: none;
@@ -164,12 +161,11 @@ ul li {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 0;
     padding: 0.5rem;
+    margin: 0;
   }
 
   .sidebar ul li {
-    list-style: none;
     margin: 0;
   }
 
@@ -182,11 +178,51 @@ ul li {
   }
 }
 
-/* Tiny Screens */
-@media (max-width: 500px) {
-  body {
-    margin: 4px;
+/* Dark Mode Overrides */
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+  background-color: #4b0000;
+  border-color: #800000;
+  color: #fdf6e3;
+}
+
+body.dark-mode .nav-links li a {
+  color: #fdf6e3;
+}
+.page-wrapper {
+  display: flex;
+  border: 4px solid #800000;
+  border-radius: 8px;
+  margin: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: #fffdf9;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+    margin: 6px;
     border-width: 2px;
-    border-radius: 5px;
+    border-radius: 6px;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    box-shadow: none;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    margin: 0 0.6rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
   }
 }
