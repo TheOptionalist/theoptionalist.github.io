@@ -5,64 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PSIR - The Optionalist</title>
   <link rel="stylesheet" href="../style.css" />
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-    }
-
-    window.onload = () => {
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-      }
-    };
-  </script>
 </head>
-<body class="light-mode">
-  <div id="header">Loading header...</div>
+<body>
+  <div class="sidebar">
+    <h2>The Optionalist</h2>
+    <a href="../Anthropology/index.html">Anthropology</a>
+    <a href="../PSIR/index.html">PSIR</a>
+    <a href="../Blogs/index.html">Blogs</a>
+    <a href="../Stories/index.html">Stories</a>
+  </div>
 
-  <main class="container main-content with-sidebar">
-  <aside class="sidebar">
+  <main class="main-content">
+    <h1>Political Science & International Relations</h1>
+    <p class="tagline">Dive into concepts for UPSC, UGC NET, and Ivy Leagues</p>
     <ul>
-      <li><a href="/Anthropology/index.html">Anthropology</a></li>
-      <li><a href="/PSIR/index.html">PSIR</a></li>
-      <li><a href="/Blogs/index.html">Blogs</a></li>
-      <li><a href="/Stories/index.html">Stories</a></li>
+      <li><a href="UPSC_CSE/Introduction.html">UPSC CSE - Liberal Theory of State</a></li>
+      <li><a href="UGC_NET/Introduction.html">UGC NET - Liberal Theory of State</a></li>
+      <li><a href="Ivy_Leagues/Introduction.html">Ivy Leagues - Liberal Theory of State</a></li>
     </ul>
-  </aside>
-
-  <section class="content-area">
-    <!-- Keep your existing heading and list here -->
-    <h2>PSIR</h2>
-<p class="tagline">Explore concepts in Political Science & International Relations</p>
-<ul>
-  <li><a href="UPSC_CSE/Introduction.html">UPSC CSE - Liberal Theory</a></li>
-  <li><a href="UGC_NET/Introduction.html">UGC NET - Liberal Theory</a></li>
-  <li><a href="Ivy_Leagues/Introduction.html">Ivy Leagues - Liberal Theory</a></li>
-</ul>
-  </section>
-</main>
-
-  <div id="footer">Loading footer...</div>
-
-  <script defer>
-  fetch('/header.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('header').innerHTML = data);
-
-  fetch('/footer.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('footer').innerHTML = data);
-
-  function filterList() {
-    const input = document.getElementById("searchBox").value.toLowerCase();
-    const items = document.querySelectorAll("ul li");
-    items.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(input) ? "" : "none";
-    });
-  }
-</script>
+  </main>
 </body>
 </html>
